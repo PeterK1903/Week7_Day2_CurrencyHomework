@@ -2,11 +2,31 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Currency Converter</title>
     <script src="./js/bundle.js"></script>
   <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
+
+<div id="app">
+  <ul>
+    <li>  {{ratesData}} </li>
+  </ul>
+
+  <h3>Please enter an amount in Euros:</h3>  <input type="number"/>
+<br>
+<br>
+<br>
+
+  <label for="from_rate_select">Select a Rate:</label>
+        <select id="from_rate_select" v-model.number="selectedRate">
+          <option disabled value="">Select a Rate</option>
+          <option v-for="(value, key) in ratesData.rates" v-bind:value="value"> {{key}} </option>
+        </select>
+<br>
+<br>
+
+</div>
 
   </body>
 </html>
